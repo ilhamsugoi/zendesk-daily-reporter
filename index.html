@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zendesk Daily Reporter — Portfolio Demo</title>
+    <meta name="description" content="Automated Zendesk-Slack Reporting System: Real-time daily ticket metrics dashboard with Slack integration demo.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background animated grid -->
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow--1"></div>
+    <div class="bg-glow bg-glow--2"></div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="header__inner">
+            <div class="header__brand">
+                <div class="header__logo">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="32" height="32" rx="8" fill="url(#logo-gradient)"/>
+                        <path d="M8 16L14 10L20 16L14 22Z" fill="white" opacity="0.9"/>
+                        <path d="M14 16L20 10L26 16L20 22Z" fill="white" opacity="0.6"/>
+                        <defs>
+                            <linearGradient id="logo-gradient" x1="0" y1="0" x2="32" y2="32">
+                                <stop stop-color="#6366f1"/>
+                                <stop offset="1" stop-color="#8b5cf6"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="header__title">Zendesk Daily Reporter</h1>
+                    <p class="header__subtitle">Automated Reporting System</p>
+                </div>
+            </div>
+            <div class="header__actions">
+                <span class="header__badge" id="statusBadge">
+                    <span class="header__badge-dot"></span>
+                    Demo Mode
+                </span>
+                <a href="https://github.com" target="_blank" class="header__github-btn" id="githubLink" title="View on GitHub">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    Source Code
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero__content">
+                <div class="hero__text">
+                    <span class="hero__tag">Portfolio Project</span>
+                    <h2 class="hero__heading">
+                        Automated <span class="gradient-text">Zendesk → Slack</span> Daily Reporting
+                    </h2>
+                    <p class="hero__description">
+                        A Google Apps Script automation that pulls real-time ticket data from Zendesk API, 
+                        processes daily metrics, and delivers formatted reports to Slack — eliminating 
+                        manual reporting and boosting team visibility.
+                    </p>
+                    <div class="hero__tech-stack">
+                        <span class="tech-pill">JavaScript</span>
+                        <span class="tech-pill">Google Apps Script</span>
+                        <span class="tech-pill">Zendesk REST API</span>
+                        <span class="tech-pill">Slack Webhooks</span>
+                        <span class="tech-pill">JSON Processing</span>
+                    </div>
+                </div>
+                <div class="hero__visual">
+                    <div class="flow-diagram">
+                        <div class="flow-node flow-node--zendesk">
+                            <div class="flow-node__icon">🎫</div>
+                            <span>Zendesk API</span>
+                        </div>
+                        <div class="flow-arrow">
+                            <svg viewBox="0 0 60 24" fill="none">
+                                <path d="M0 12H50M50 12L42 4M50 12L42 20" stroke="url(#arrow-grad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <defs><linearGradient id="arrow-grad" x1="0" y1="12" x2="60" y2="12"><stop stop-color="#6366f1" stop-opacity="0.3"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs>
+                            </svg>
+                        </div>
+                        <div class="flow-node flow-node--gas">
+                            <div class="flow-node__icon">⚙️</div>
+                            <span>Apps Script</span>
+                        </div>
+                        <div class="flow-arrow">
+                            <svg viewBox="0 0 60 24" fill="none">
+                                <path d="M0 12H50M50 12L42 4M50 12L42 20" stroke="url(#arrow-grad2)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <defs><linearGradient id="arrow-grad2" x1="0" y1="12" x2="60" y2="12"><stop stop-color="#8b5cf6" stop-opacity="0.3"/><stop offset="1" stop-color="#a78bfa"/></linearGradient></defs>
+                            </svg>
+                        </div>
+                        <div class="flow-node flow-node--slack">
+                            <div class="flow-node__icon">💬</div>
+                            <span>Slack</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Controls -->
+        <section class="controls" id="controls">
+            <div class="controls__inner">
+                <div class="controls__left">
+                    <h3 class="controls__title">Live Dashboard</h3>
+                    <p class="controls__desc">Click the buttons to simulate automated reports</p>
+                </div>
+                <div class="controls__right">
+                    <button class="btn btn--morning" id="btnMorning" onclick="runMorningReport()">
+                        <span class="btn__icon">🌅</span>
+                        Run Morning Report
+                    </button>
+                    <button class="btn btn--evening" id="btnEvening" onclick="runEveningReport()">
+                        <span class="btn__icon">🌆</span>
+                        Run Evening Report
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Grid -->
+        <section class="dashboard" id="dashboard">
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card stat-card--open" id="cardOpen">
+                    <div class="stat-card__header">
+                        <span class="stat-card__label">Open Tickets</span>
+                        <span class="stat-card__icon">🔴</span>
+                    </div>
+                    <div class="stat-card__value" id="openCount">—</div>
+                    <div class="stat-card__footer">Needs agent attention</div>
+                    <div class="stat-card__bar stat-card__bar--open"></div>
+                </div>
+
+                <div class="stat-card stat-card--pending" id="cardPending">
+                    <div class="stat-card__header">
+                        <span class="stat-card__label">Pending Tickets</span>
+                        <span class="stat-card__icon">🟡</span>
+                    </div>
+                    <div class="stat-card__value" id="pendingCount">—</div>
+                    <div class="stat-card__footer">Awaiting customer reply</div>
+                    <div class="stat-card__bar stat-card__bar--pending"></div>
+                </div>
+
+                <div class="stat-card stat-card--solved" id="cardSolved">
+                    <div class="stat-card__header">
+                        <span class="stat-card__label">Solved Today</span>
+                        <span class="stat-card__icon">🟢</span>
+                    </div>
+                    <div class="stat-card__value" id="solvedCount">—</div>
+                    <div class="stat-card__footer">Resolved this session</div>
+                    <div class="stat-card__bar stat-card__bar--solved"></div>
+                </div>
+
+                <div class="stat-card stat-card--total" id="cardTotal">
+                    <div class="stat-card__header">
+                        <span class="stat-card__label">Total in Queue</span>
+                        <span class="stat-card__icon">📊</span>
+                    </div>
+                    <div class="stat-card__value" id="totalCount">—</div>
+                    <div class="stat-card__footer">Open + Pending</div>
+                    <div class="stat-card__bar stat-card__bar--total"></div>
+                </div>
+            </div>
+
+            <!-- Two Column Layout -->
+            <div class="dashboard__columns">
+                <!-- Top Tags -->
+                <div class="panel panel--tags" id="panelTags">
+                    <div class="panel__header">
+                        <h3 class="panel__title">🏷️ Top Tags Today</h3>
+                        <span class="panel__badge" id="tagsBadge">Waiting...</span>
+                    </div>
+                    <div class="panel__body" id="tagsBody">
+                        <div class="tags-placeholder">
+                            <div class="tags-placeholder__icon">📋</div>
+                            <p>Run <strong>Evening Report</strong> to see today's top issue tags</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slack Preview -->
+                <div class="panel panel--slack" id="panelSlack">
+                    <div class="panel__header">
+                        <h3 class="panel__title">💬 Slack Message Preview</h3>
+                        <span class="panel__badge" id="slackBadge">No messages</span>
+                    </div>
+                    <div class="panel__body slack-preview" id="slackBody">
+                        <div class="slack-placeholder">
+                            <div class="slack-placeholder__icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="40" height="40">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                            <p>Click a report button to preview the Slack message</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ticket Table -->
+            <div class="panel panel--table" id="panelTable">
+                <div class="panel__header">
+                    <h3 class="panel__title">📄 Ticket Details (Mock Data)</h3>
+                    <span class="panel__badge" id="tableBadge">0 tickets</span>
+                </div>
+                <div class="panel__body">
+                    <div class="table-wrapper">
+                        <table class="ticket-table" id="ticketTable">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Subject</th>
+                                    <th>Status</th>
+                                    <th>Priority</th>
+                                    <th>Tags</th>
+                                    <th>Updated</th>
+                                </tr>
+                            </thead>
+                            <tbody id="ticketTableBody">
+                                <!-- Populated by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Code Showcase -->
+        <section class="code-section" id="codeSection">
+            <div class="code-section__header">
+                <h3 class="code-section__title">⚡ How It Works</h3>
+                <p class="code-section__desc">Key implementation highlights from the Google Apps Script</p>
+            </div>
+            <div class="code-cards">
+                <div class="code-card" id="codeCard1">
+                    <div class="code-card__label">1. Fetch Tickets from Zendesk API</div>
+                    <pre class="code-card__pre"><code>function getTicketsFromView(viewId) {
+  const url = `https://${SUBDOMAIN}.zendesk.com
+    /api/v2/views/${viewId}/tickets.json`;
+
+  const response = UrlFetchApp.fetch(url, {
+    headers: {
+      Authorization: 'Basic ' + 
+        Utilities.base64Encode(EMAIL + ':' + TOKEN)
+    }
+  });
+
+  return JSON.parse(response.getContentText())
+    .tickets || [];
+}</code></pre>
+                </div>
+                <div class="code-card" id="codeCard2">
+                    <div class="code-card__label">2. Process & Aggregate Tag Data</div>
+                    <pre class="code-card__pre"><code>// Count tag frequency across all tickets
+const tagCounter = {};
+tickets.forEach(ticket => {
+  (ticket.tags || []).forEach(tag => {
+    tagCounter[tag] = (tagCounter[tag] || 0) + 1;
+  });
+});
+
+// Extract Top 3 most common tags
+const topTags = Object.entries(tagCounter)
+  .sort((a, b) => b[1] - a[1])
+  .slice(0, 3);</code></pre>
+                </div>
+                <div class="code-card" id="codeCard3">
+                    <div class="code-card__label">3. Send Formatted Report to Slack</div>
+                    <pre class="code-card__pre"><code>function sendToSlack(text) {
+  UrlFetchApp.fetch(SLACK_WEBHOOK_URL, {
+    method: 'post',
+    contentType: 'application/json',
+    payload: JSON.stringify({ text })
+  });
+}
+
+// Example message:
+// 🌅 Laporan Pagi — 18 April 2026
+// Total tiket OPEN: 12
+// Total tiket PENDING: 5</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features" id="features">
+            <h3 class="features__title">✨ Key Features</h3>
+            <div class="features__grid">
+                <div class="feature-card" id="feature1">
+                    <div class="feature-card__icon">⏰</div>
+                    <h4>Scheduled Automation</h4>
+                    <p>Time-driven triggers run reports automatically every weekday — morning & evening, with weekend exclusion logic.</p>
+                </div>
+                <div class="feature-card" id="feature2">
+                    <div class="feature-card__icon">🔗</div>
+                    <h4>API Integration</h4>
+                    <p>Seamless integration between Zendesk REST API (Basic Auth + Base64) and Slack Incoming Webhooks.</p>
+                </div>
+                <div class="feature-card" id="feature3">
+                    <div class="feature-card__icon">📊</div>
+                    <h4>Data Aggregation</h4>
+                    <p>Processes hundreds of tickets with pagination handling, calculates status counts, and ranks issue tags by frequency.</p>
+                </div>
+                <div class="feature-card" id="feature4">
+                    <div class="feature-card__icon">🛡️</div>
+                    <h4>Secure & Lightweight</h4>
+                    <p>Runs entirely on Google's infrastructure — zero hosting cost, no server maintenance, credentials stored server-side.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="footer__inner">
+            <p class="footer__text">Built with ❤️ using Google Apps Script, Zendesk API & Slack Webhooks</p>
+            <p class="footer__note">This is a portfolio demo using mock data. No real credentials are exposed.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
