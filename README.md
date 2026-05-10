@@ -52,7 +52,7 @@ This project automates daily customer support reporting by:
 
 ## 🚀 Live Demo
 
-👉 **[View the Interactive Dashboard Demo](https://your-github-username.github.io/zendesk-daily-reporter/)**
+👉 **[View the Interactive Dashboard Demo](https://ilhamsugoi.github.io/zendesk-daily-reporter/)**
 
 The demo uses **mock data** to simulate the system without requiring any API credentials. You can:
 - Click **"Run Morning Report"** to see Open/Pending ticket counts
